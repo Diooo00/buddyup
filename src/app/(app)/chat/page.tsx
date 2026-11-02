@@ -37,8 +37,8 @@ export default function ChatPage() {
         subtitle="Tanyakan apa saja tentang kehidupan kampus"
       />
 
-      {/* Page layout: flex column filling the viewport below the header */}
-      <div className="flex flex-col h-[calc(100dvh-4rem)] md:h-[calc(100vh-4rem)] pb-16 md:pb-0">
+      {/* Page layout: flex column, fills remaining viewport height after sticky header */}
+      <div className="flex flex-col" style={{ height: 'calc(100dvh - 4rem)' }}>
 
         {/* Disclaimer bar */}
         <div className="flex items-start gap-2 bg-amber-50 border-b border-amber-200 px-4 py-2.5">

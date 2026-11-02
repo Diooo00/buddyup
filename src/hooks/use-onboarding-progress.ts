@@ -1,3 +1,5 @@
+'use client'
+
 import { useMemo } from 'react'
 import { useLocalStorage } from './use-local-storage'
 import { LS_KEYS } from '@/lib/constants'

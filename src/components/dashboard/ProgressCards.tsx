@@ -61,31 +61,30 @@ export function ProgressCards({ progress }: ProgressCardsProps) {
 
           return (
             <div
-                key={cat}
-                className="buddyup-card p-4 hover:shadow-card-hover transition-shadow"
-              >
-                <div className="flex items-start justify-between mb-3">
-                  <div>
-                    <p className="font-semibold text-navy-500 text-sm">{meta.label}</p>
-                    <p className="text-xs text-slate-400 mt-0.5">
-                      {completed} / {total} selesai
-                    </p>
-                  </div>
-                  {isDone ? (
-                    <CheckCircle2 size={18} className="text-green-500 mt-0.5" />
-                  ) : (
-                    <Circle size={18} className={`${meta.colorClass} mt-0.5 opacity-50`} />
-                  )}
+              key={cat}
+              className="buddyup-card p-4 hover:shadow-card-hover transition-shadow"
+            >
+              <div className="flex items-start justify-between mb-3">
+                <div>
+                  <p className="font-semibold text-navy-500 text-sm">{meta.label}</p>
+                  <p className="text-xs text-slate-400 mt-0.5">
+                    {completed} / {total} selesai
+                  </p>
                 </div>
-                {/* Use style override so indicator colour works across Radix versions */}
-                <div className="relative h-1.5 w-full overflow-hidden rounded-full bg-lightblue-100">
-                  <div
-                    className="h-full rounded-full transition-all duration-500"
-                    style={{ width: `${pct}%`, backgroundColor: meta.barColor }}
-                  />
-                </div>
-                <p className={`text-xs font-semibold mt-1.5 ${meta.colorClass}`}>{pct}%</p>
+                {isDone ? (
+                  <CheckCircle2 size={18} className="text-green-500 mt-0.5" />
+                ) : (
+                  <Circle size={18} className={`${meta.colorClass} mt-0.5 opacity-50`} />
+                )}
               </div>
+              <div className="relative h-1.5 w-full overflow-hidden rounded-full bg-lightblue-100">
+                <div
+                  className="h-full rounded-full transition-all duration-500"
+                  style={{ width: `${pct}%`, backgroundColor: meta.barColor }}
+                />
+              </div>
+              <p className={`text-xs font-semibold mt-1.5 ${meta.colorClass}`}>{pct}%</p>
+            </div>
           )
         })}
       </div>

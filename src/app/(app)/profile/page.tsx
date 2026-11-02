@@ -39,7 +39,7 @@ export default function ProfilePage() {
             <Pencil size={14} />
             Edit Profil
           </Button>
-          <p className="text-xs text-slate-400">Fitur edit profil tersedia di Stage 5</p>
+          <p className="text-xs text-slate-400">Lengkapi profilmu melalui pengaturan</p>
         </div>
 
         {/* Detail fields */}
