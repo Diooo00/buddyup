@@ -2,6 +2,9 @@
   "name": "buddyup",
   "version": "0.1.0",
   "private": true,
+  "overrides": {
+    "minimatch": "^11.0.4"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -38,7 +41,7 @@
     "postcss": "^8",
     "tailwindcss": "^4.0.0",
     "@tailwindcss/postcss": "^4.0.0",
-    "eslint": "^8",
+    "eslint": "^10.14.0",
     "eslint-config-next": "16.4.4"
   }
 }
