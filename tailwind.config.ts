@@ -20,7 +20,7 @@ const config: Config = {
         // BUDDYUP Design Palette
         navy: {
           DEFAULT: '#173B63',
-          50: '#E8EFF6',
+          50: '#EEF4FA',
           100: '#C5D6E8',
           200: '#9FBBD8',
           300: '#789FC7',
@@ -46,7 +46,7 @@ const config: Config = {
         },
         lightblue: {
           DEFAULT: '#DCEEFF',
-          50: '#F5F9FF',
+          50: '#F0F7FF',
           100: '#DCEEFF',
           200: '#B8DCFE',
           300: '#95CAFD',
