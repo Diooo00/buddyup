@@ -1,7 +1,31 @@
 'use client'
 
+import { useState, useEffect } from 'react'
 import { cn } from '@/lib/utils'
 import type { ChatMessage } from '@/types'
+
+/**
+ * Renders a timestamp only after the component mounts on the client.
+ * Returns null on the server (and on the first client render) so that
+ * the SSR HTML and the initial hydration pass always match — preventing
+ * React hydration mismatch errors caused by toLocaleTimeString() returning
+ * different values on the server vs. the browser.
+ */
+function Timestamp({ iso }: { iso: string }) {
+  const [label, setLabel] = useState<string | null>(null)
+
+  useEffect(() => {
+    setLabel(
+      new Date(iso).toLocaleTimeString('id-ID', {
+        hour: '2-digit',
+        minute: '2-digit',
+      }),
+    )
+  }, [iso])
+
+  if (label === null) return null
+  return <>{label}</>
+}
 
 interface MessageBubbleProps {
   message: ChatMessage
@@ -19,10 +43,7 @@ export function MessageBubble({ message }: MessageBubbleProps) {
             {message.content}
           </div>
           <p className="text-[10px] text-slate-400 text-right mt-1 px-1">
-            {new Date(message.timestamp).toLocaleTimeString('id-ID', {
-              hour: '2-digit',
-              minute: '2-digit',
-            })}
+            <Timestamp iso={message.timestamp} />
           </p>
         </div>
       </div>
@@ -55,10 +76,7 @@ export function MessageBubble({ message }: MessageBubbleProps) {
         </div>
         {!isLoading && (
           <p className="text-[10px] text-slate-400 mt-1 px-1">
-            {new Date(message.timestamp).toLocaleTimeString('id-ID', {
-              hour: '2-digit',
-              minute: '2-digit',
-            })}
+            <Timestamp iso={message.timestamp} />
           </p>
         )}
       </div>
