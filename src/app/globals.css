@@ -1,0 +1,125 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 214 38% 97%;
+    --foreground: 213 25% 21%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 213 25% 21%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 213 25% 21%;
+
+    --primary: 210 61% 24%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 213 48% 43%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 214 38% 95%;
+    --muted-foreground: 213 15% 45%;
+
+    --accent: 210 100% 94%;
+    --accent-foreground: 210 61% 24%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 214 32% 90%;
+    --input: 214 32% 90%;
+    --ring: 213 48% 43%;
+
+    --radius: 0.625rem;
+
+    /* BUDDYUP Brand Colors as CSS vars */
+    --color-navy: #173B63;
+    --color-blue: #3674A5;
+    --color-lightblue: #DCEEFF;
+    --color-background: #F7F9FC;
+    --color-text: #263445;
+    --color-softgreen: #DDF3E5;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    background-color: #F7F9FC;
+    color: #263445;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+    color: #173B63;
+  }
+
+  a {
+    @apply transition-colors;
+  }
+}
+
+@layer components {
+  /* BUDDYUP Card */
+  .buddyup-card {
+    @apply bg-white rounded-xl border border-border shadow-card;
+  }
+
+  /* BUDDYUP Section Title */
+  .section-title {
+    @apply text-lg font-semibold text-navy-500;
+  }
+
+  /* BUDDYUP Progress Bar */
+  .progress-bar {
+    @apply h-2 rounded-full bg-lightblue-100 overflow-hidden;
+  }
+
+  .progress-bar-fill {
+    @apply h-full rounded-full bg-blue-500 transition-all duration-500;
+  }
+
+  /* BUDDYUP Badge */
+  .badge-navy {
+    @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium bg-lightblue-100 text-navy-500;
+  }
+
+  .badge-green {
+    @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium bg-softgreen-100 text-green-700;
+  }
+
+  /* Sidebar nav item */
+  .nav-item {
+    @apply flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-all duration-150 cursor-pointer;
+  }
+
+  .nav-item-active {
+    @apply bg-lightblue-100 text-navy-500;
+  }
+
+  .nav-item-inactive {
+    @apply text-slate-500 hover:bg-slate-50 hover:text-navy-500;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.3s ease-out;
+  }
+
+  .animate-slide-in {
+    animation: slide-in 0.3s ease-out;
+  }
+}
