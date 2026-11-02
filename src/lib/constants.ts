@@ -47,11 +47,8 @@ export const CHECKLIST_CATEGORIES = {
   kesehatan: { label: 'Kesehatan', color: 'bg-green-100 text-green-700' },
 } as const
 
-// AI Chat
+// AI Chat (display-only config for client — actual API config is server-side in lib/ai-provider.ts)
 export const AI_CONFIG = {
-  MODEL: process.env.NEXT_PUBLIC_AI_MODEL ?? 'gpt-4o-mini',
-  MAX_TOKENS: 1024,
-  TEMPERATURE: 0.7,
   SYSTEM_LANGUAGE: 'Indonesian',
 } as const
 
